@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Thymeleaf Project</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div th:text="${title}"></div>
+<div>List Of Plans:</div>
+<table class="table table-striped">
+                <thead>
+                 <tr>
+                    <th>Plan</th>
+                    <th>Quotation</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="plan : ${plans}">
+					<td th:text="${plan.name}"></td>
+					<td th:text="${plan.age}"></td>
+                    </tr>
+                </tbody>
+</table>
+<div>List Of Devices:</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Storage Capacity</th>
+        <th>Color</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="device : ${listOfDevices}">
+        <td th:text="${device.name}"></td>
+        <td th:text="${device.storage}"></td>
+        <td th:text="${device.color}"></td>
+    </tr>
+
+    </tbody>
+</table>
+<div>List Of Accessories:</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Accessories</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="accessories : ${accessories}">
+        <td th:text="${accessories.name}"></td>
+    </tr>
+
+    </tbody>
+</table>
+<div>List Of AddOns:</div>
+<table class="table table-striped">
+<thead>
+<tr>
+    <th>Add Ons</th>
+
+</tr>
+</thead>
+<tbody>
+
+<tr th:each="addon : ${addons}">
+    <td th:text="${addon.name}"></td>
+</tr>
+
+</tbody>
+</table>
+</body>
+</html>
